@@ -27,7 +27,7 @@ app.get("/task/api", (req, res) => {
     slack_name: req.query.slack_name,
     track: req.query.track,
     current_day: currentDay,
-    utc_time: new Date(),
+    utc_time: new Date().toISOString().split(".")[0] + "Z",
     github_file_url: "https://github.com/dorcax/",
     github_repo_url: "https://github.com/dorcax/Zuri-task1",
     status_code: res.statusCode,
